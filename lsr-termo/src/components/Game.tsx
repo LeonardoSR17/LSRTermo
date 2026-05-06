@@ -34,9 +34,9 @@ export const Game = ({ resetTrigger }: GameProps) => {
     });
     const [gameCompletionState, setGameCompletion] = useState<'active' | 'won' | 'lost'>('active');
     const [toastText, setToastText] = useState('');
-    const toastTimeout = useRef<number | undefined>(undefined);
+    const toastTimeout = useRef<any>(undefined);
     const [shakeCurrentRow, setShakeCurrentRow] = useState(false);
-    const shakeTimeout = useRef<number | undefined>(undefined);
+    const shakeTimeout = useRef<any>(undefined);
 
     useEffect(() => {
       if (resetTrigger && resetTrigger > 0) {

@@ -24,7 +24,7 @@ export const Tile = ({ letter, state, idx, jump } : TileProps) => {
     const [revealColor, setRevealColor] = useState(false);
     const animationDelay = jump ? idx * 80 : idx * 300;
     useEffect(() => {
-        let timeout: number;
+        let timeout: any;
         if (state !== 'default') {
             timeout = setTimeout(() => {
                 setRevealColor(true);
