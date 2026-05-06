@@ -1,0 +1,12 @@
+.toast {
+    animation: fadein 300ms ease-in;
+ }
+
+ @keyframes fadein {
+    from {
+        opacity: o;
+    }
+    to {
+        opacity: 1;
+    }
+ }
