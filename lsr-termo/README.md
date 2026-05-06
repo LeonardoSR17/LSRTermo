@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# LSR Termo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Jogo de palavras estilo Termo/Wordle feito com React + TypeScript.
 
-Currently, two official plugins are available:
+## 🎮 Como jogar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Adivinhe a palavra de 5 letras em 6 tentativas
+- Verde = letra certa no lugar certo
+- Amarelo = letra certa no lugar errado
+- Cinza = letra errada
 
-## React Compiler
+## 🛠️ Tecnologias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18
+- TypeScript
+- Tailwind CSS
+- Vite
 
-## Expanding the ESLint configuration
+## 💻 Rodar localmente
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## 🎯 Funcionalidades
+
+- Palavras aleatórias
+- Salva progresso no navegador
+- Teclado virtual e físico
+- Botão Novo Jogo
+
+## 📁 Estrutura
+
+```
+src/
+├── components/     # Componentes React
+├── utils/         # Funções auxiliares
+├── config/        # Dicionário de palavras
+└── constants.ts   # Configurações do jogo
+```
+
+## 🔧 Personalização
+
+Edite `src/constants.ts`:
+```ts
+export const GAME_WORLD_LEN = 5;  // Tamanho da palavra
+export const GAME_ROUNDS = 6;     // Número de tentativas
+```
+
+Adicione palavras em `src/config/allowed_words.json`
