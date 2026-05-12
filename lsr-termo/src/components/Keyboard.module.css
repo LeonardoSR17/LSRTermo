@@ -1,30 +1,88 @@
+.key {
+  border-radius: 10px;
+  transition: all 0.15s ease;
+  border: 2px solid #3f343a;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  user-select: none;
+  width: clamp(2.5rem, 10vw, 3.25rem);
+  height: clamp(2.75rem, 11vw, 3.5rem);
+  font-size: clamp(0.875rem, 4vw, 1.25rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3f343a;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .key {
+    width: 3.25rem;
+    height: 3.5rem;
+    border-radius: 12px;
+    font-size: 1.25rem;
+  }
+}
+
+.key:active {
+  transform: scale(0.95);
+}
+
 .spacer {
-    flex: 0.5;
+  flex: 0.5;
 }
 
 .largeKey {
-    flex: 1.5;
+  width: clamp(3.75rem, 15vw, 5rem);
+  font-size: clamp(0.625rem, 2.5vw, 0.875rem);
+}
+
+@media (min-width: 768px) {
+  .largeKey {
+    width: 5rem;
+    font-size: 0.875rem;
+  }
 }
 
 .defaultKey {
-    @apply bg-gray-500;
-    @apply active:bg-slate-400;
+  background-color: #3f343a;
+  border-color: #3f343a;
+  color: #ffffff;
+}
+
+.defaultKey:hover {
+  background-color: #4a3d44;
 }
 
 .wrong {
-    @apply bg-gray-700;
-    @apply border-gray-700;
-    @apply active:bg-gray-600;
+  background-color: #2a2327;
+  border-color: #2a2327;
+  color: #8a8a8a;
+}
+
+.wrong:hover {
+  background-color: #2a2327;
 }
 
 .correct {
-    @apply bg-green-600;
-    @apply border-green-600;
-    @apply active:bg-green-500;
+  background-color: #3ec7b3;
+  border-color: #3ec7b3;
+  color: #ffffff;
+}
+
+.correct:hover {
+  background-color: #35b8a4;
 }
 
 .wrongPlace {
-    border-color: #b59f3b;
-    background-color: #b59f3b;
-    @apply active:bg-yellow-500;
+  background-color: #c9a65a;
+  border-color: #c9a65a;
+  color: #ffffff;
+}
+
+.wrongPlace:hover {
+  background-color: #ba9751;
 }

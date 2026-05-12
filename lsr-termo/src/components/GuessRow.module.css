@@ -1,98 +1,83 @@
+.tile {
+  border: 2px solid #3f343a;
+  background-color: #3f343a;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  width: clamp(3.5rem, 14vw, 4.5rem);
+  height: clamp(3.5rem, 14vw, 4.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-weight: 900;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .tile {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 14px;
+    font-size: 2rem;
+  }
+}
+
 .hasLetter {
-    @apply border-gray-300;
-    animation: pop 85ms ease-in;
+  border-color: #5a4a53;
+  animation: pop 0.1s ease-out;
 }
 
 @keyframes pop {
-    0% {
-        scale: 1;
-    }
-    50% {
-        scale: 1.1;
-    }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
 }
 
 .wrong {
-    @apply bg-gray-700;
-    @apply border-gray-700
+  background-color: #2a2327;
+  border-color: #2a2327;
 }
 
 .correct {
-    @apply bg-green-600;
-    @apply border-green-600;
+  background-color: #3ec7b3;
+  border-color: #3ec7b3;
 }
 
 .wrongPlace {
-    border-color: #b59f3b;
-    background-color: #b59f3b;
+  background-color: #c9a65a;
+  border-color: #c9a65a;
 }
 
-
 .shake {
-    animation: shake 600ms;
+  animation: shake 0.5s ease-in-out;
 }
 
 @keyframes shake {
-    10%,
-    90% {
-        transform: translateX(-1px);
-    }
-
-    20%,
-    80% {
-        transform: translateX(2px);
-    }
-
-    30%,
-    50%,
-    70% {
-        transform: translateX(-4px);
-    }
-
-    40%,
-    60% {
-        transform: translateX(4px);
-    }
+  0%, 100% { transform: translateX(0); }
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(3px); }
+  30%, 50%, 70% { transform: translateX(-5px); }
+  40%, 60% { transform: translateX(5px); }
 }
 
 .flip {
-    animation: flip 650ms ease-in;
+  animation: flip 0.5s ease-in-out;
 }
 
 @keyframes flip {
-    0% {
-        transform: rotateX(0deg);
-    }
-    50% {
-        transform: rotateX(90deg);
-    }
-    100% {
-        transform: rotateX(0deg);
-    }
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
 }
 
 .jump {
-    animation: jump 1000ms ease-in;
+  animation: jump 0.8s ease-in-out;
 }
 
 @keyframes jump {
-    0%,
-    20% {
-        transform: translateY(2px);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    50% {
-        transform: translateY(5px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
-    80% {
-        transform: translateY(2px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-20px); }
+  40% { transform: translateY(5px); }
+  60% { transform: translateY(-10px); }
+  80% { transform: translateY(2px); }
 }

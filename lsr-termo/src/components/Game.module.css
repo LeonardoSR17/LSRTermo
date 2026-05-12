@@ -1,12 +1,23 @@
 .toast {
-    animation: fadein 300ms ease-in;
- }
+  animation: fadein 0.3s ease-out;
+  background-color: #3f343a;
+  color: white;
+  border-radius: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 2px solid #5a4a53;
+  font-size: clamp(0.75rem, 3vw, 0.875rem);
+  white-space: nowrap;
+}
 
- @keyframes fadein {
-    from {
-        opacity: o;
-    }
-    to {
-        opacity: 1;
-    }
- }
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

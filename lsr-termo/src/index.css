@@ -2,21 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #root {
   height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 :root {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  
   height: 100%;
-
-  color-scheme: light dark;
-  color: white;
-  background-color: #242424;
-
+  
+  color-scheme: dark;
+  color: #ffffff;
+  background-color: #6b5a63;
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -26,8 +38,25 @@
 
 body {
   height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  background: linear-gradient(135deg, #6b5a63 0%, #5a4a53 50%, #4a3a43 100%);
+  background-attachment: fixed;
 }
 
 h1 {
-  @apply font-bold text-2xl;
+  font-weight: 900;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  letter-spacing: 0.1em;
+}
+
+input, textarea, button, select {
+  font-size: 16px;
+}
+
+@media (max-height: 600px) {
+  :root {
+    font-size: 14px;
+  }
 }

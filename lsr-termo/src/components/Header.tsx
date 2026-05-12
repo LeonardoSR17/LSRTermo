@@ -1,19 +1,42 @@
+import { useState } from "react";
+import { HelpModal } from "./HelpModal";
+
 type Props = {
-    onNewGame?: () => void;
-}
+  onNewGame?: () => void;
+};
 
 export const Header = ({ onNewGame }: Props) => {
-    return (
-        <div className="w-full h-12 md:h-16 flex justify-between items-center px-4 border-b border-gray-600">
-            <h1>LSR Termo</h1>
-            {onNewGame && (
-                <button 
-                    onClick={onNewGame}
-                    className="px-3 py-1 bg-blue-600 rounded-md hover:bg-blue-500 transition-colors"
-                >
-                    Novo Jogo
-                </button>
-            )}
+  const [showHelp, setShowHelp] = useState(false);
+
+  return (
+    <>
+      <header className="w-full px-3 py-2 md:px-4 md:py-2.5 flex justify-between items-center">
+        <div className="flex items-center gap-2 md:gap-3">
+          <button
+            onClick={() => setShowHelp(true)}
+            className="w-9 h-9 md:w-10 md:h-10 bg-[#3f343a] text-white rounded-xl 
+                       font-extrabold hover:bg-[#4a3d44] active:scale-95 transition-all
+                       text-base md:text-lg border-2 border-[#5a4a53] flex items-center justify-center"
+            aria-label="Ajuda"
+          >
+            ?
+          </button>
+          <h1 className="text-white tracking-wider text-base md:text-lg">LSR Termo</h1>
         </div>
-    );
-}
+        
+        {onNewGame && (
+          <button
+            onClick={onNewGame}
+            className="px-3 py-1.5 md:px-4 md:py-2 bg-[#3f343a] text-white rounded-xl 
+                       font-extrabold hover:bg-[#4a3d44] active:scale-95 transition-all
+                       text-xs md:text-sm tracking-wider uppercase border-2 border-[#5a4a53]"
+          >
+            Novo Jogo
+          </button>
+        )}
+      </header>
+      
+      <HelpModal isOpen={showHelp} onClose={() => setShowHelp(false)} />
+    </>
+  );
+};
